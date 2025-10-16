@@ -720,3 +720,78 @@ body {
     flex-wrap: wrap;
     margin-top: 3rem;
 }
+/* Styles pour les publicités Google Ads */
+.ads-banner {
+    background: var(--white);
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ads-banner .container,
+.ads-square,
+.ads-before-blog,
+.ads-after-blog,
+.ads-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.ads-square {
+    min-height: 250px;
+    margin: 2rem auto;
+}
+
+.ads-platform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.ads-in-content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive pour les ads */
+@media (max-width: 768px) {
+    .ads-banner .container,
+    .ads-square,
+    .ads-before-blog,
+    .ads-after-blog,
+    .ads-footer {
+        margin: 1rem 0;
+    }
+    
+    .ads-square {
+        min-height: 200px;
+    }
+    
+    .ads-platform {
+        min-height: 150px;
+    }
+}
+
+/* Assurer que les ads ne cassent pas le layout */
+ins.adsbygoogle {
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+/* Style pour la bannière en haut */
+.ads-banner ins.adsbygoogle {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+/* Style pour les ads carrés */
+.ads-square ins.adsbygoogle {
+    max-width: 300px;
+}
+
+/* Style pour les ads dans le contenu */
+.ads-in-content ins.adsbygoogle {
+    max-width: 250px;
+}
