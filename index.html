@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Louz - Vos Formations Certifiantes</title>
+    
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+     crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -12,7 +17,7 @@
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <h2> Louz</h2>
+                <h2>🚀 Louz</h2>
             </div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
@@ -53,6 +58,24 @@
                     <p>Étudiants</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Bannière Google Ads -->
+    <section class="ads-banner">
+        <div class="container">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                crossorigin="anonymous"></script>
+            <!-- Bannière horizontale -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-7204440079700980"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </section>
 
@@ -99,6 +122,22 @@
     <section id="top-formations" class="top-formations">
         <div class="container">
             <h2 class="section-title">🏆 Top 10 des Formations en IA</h2>
+            
+            <!-- Google Ads - Carré -->
+            <div class="ads-square">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-7204440079700980"
+                    data-ad-slot="0987654321"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <div class="formations-list" id="formationsList">
                 <!-- Les formations seront chargées par JavaScript -->
             </div>
@@ -123,6 +162,23 @@
                         <span><i class="fas fa-times"></i> Gratuit limité</span>
                     </div>
                     <button class="btn btn-outline" onclick="openPlatform('coursera')">Voir les formations</button>
+                </div>
+                
+                <!-- Google Ads - Dans le comparatif -->
+                <div class="platform-card ads-platform">
+                    <div class="ads-in-content">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                            crossorigin="anonymous"></script>
+                        <ins class="adsbygoogle"
+                            style="display:block; text-align:center;"
+                            data-ad-layout="in-article"
+                            data-ad-format="fluid"
+                            data-ad-client="ca-pub-7204440079700980"
+                            data-ad-slot="5678901234"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
                 </div>
                 
                 <div class="platform-card">
@@ -166,10 +222,40 @@
                 <button class="filter-btn active" data-source="all">Toutes les sources</button>
                 <button class="filter-btn" data-source="coursera">Coursera</button>
                 <button class="filter-btn" data-source="udemy">Udemy</button>
-                <button class="filter-btn" data-source="edtech">OpenClassrooms</button>
+                <button class="filter-btn" data-source="openclassrooms">OpenClassrooms</button>
             </div>
+            
+            <!-- Google Ads - Avant les articles -->
+            <div class="ads-before-blog">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-format="autorelaxed"
+                    data-ad-client="ca-pub-7204440079700980"
+                    data-ad-slot="4321098765"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <div class="blog-grid" id="blogGrid">
                 <!-- Les articles de blog seront chargés dynamiquement -->
+            </div>
+            
+            <!-- Google Ads - Après les articles -->
+            <div class="ads-after-blog">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-format="fluid"
+                    data-ad-layout="in-article"
+                    data-ad-client="ca-pub-7204440079700980"
+                    data-ad-slot="8765432109"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </section>
@@ -193,9 +279,9 @@
                 <div class="footer-section">
                     <h4>Légal</h4>
                     <ul>
-                        <li><a href="#" onclick="openLegal('mentions')">Mentions légales</a></li>
-                        <li><a href="#" onclick="openLegal('confidentialite')">Confidentialité</a></li>
-                        <li><a href="#" onclick="openLegal('affiliation')">Affiliation</a></li>
+                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="confidentialite.html">Confidentialité</a></li>
+                        <li><a href="affiliation.html">Affiliation</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -206,8 +292,24 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Google Ads - Footer -->
+            <div class="ads-footer">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7204440079700980"
+                    crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-7204440079700980"
+                    data-ad-slot="1357908642"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Louz. Tous droits réservés.</p>
+                <p>&copy; 2024 Louz. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -218,8 +320,8 @@
             <span class="close" onclick="closeLoginModal()">&times;</span>
             <h2>Connexion</h2>
             <form class="auth-form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mot de passe" required>
+                <input type="email" placeholder="Email" required name="email">
+                <input type="password" placeholder="Mot de passe" required name="password">
                 <button type="submit" class="btn btn-primary">Se connecter</button>
             </form>
             <p class="auth-switch">
@@ -233,10 +335,10 @@
             <span class="close" onclick="closeRegisterModal()">&times;</span>
             <h2>Inscription</h2>
             <form class="auth-form">
-                <input type="text" placeholder="Nom complet" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mot de passe" required>
-                <input type="password" placeholder="Confirmer le mot de passe" required>
+                <input type="text" placeholder="Nom complet" required name="name">
+                <input type="email" placeholder="Email" required name="email">
+                <input type="password" placeholder="Mot de passe" required name="password">
+                <input type="password" placeholder="Confirmer le mot de passe" required name="confirmPassword">
                 <button type="submit" class="btn btn-primary">S'inscrire</button>
             </form>
             <p class="auth-switch">
