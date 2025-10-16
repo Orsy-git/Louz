@@ -455,6 +455,75 @@ function simulateRealTimeUpdates() {
         
     }, 30000);
 }
+// Optimisation pour Google Ads
+function initializeGoogleAds() {
+    // Re-push les ads après chargement dynamique du contenu
+    if (window.adsbygoogle) {
+        setTimeout(() => {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }, 1000);
+    }
+}
+
+// Appeler cette fonction après chaque chargement de contenu dynamique
+function loadTopFormations() {
+    const container = document.getElementById('formationsList');
+    container.innerHTML = '';
+    
+    formationsData.forEach(formation => {
+        const formationElement = document.createElement('div');
+        formationElement.className = 'formation-item';
+        formationElement.innerHTML = `
+            <div class="formation-info">
+                <h4>${formation.title}</h4>
+                <p>${formation.platform} • ${formation.duration} • ${formation.level}</p>
+            </div>
+            <div class="formation-meta">
+                <span class="rating">★ ${formation.rating}</span>
+                <span class="students">👥 ${formation.students.toLocaleString()}</span>
+                <span class="price">${formation.price}</span>
+                <button class="btn btn-primary" onclick="openFormation(${formation.id})">Voir</button>
+            </div>
+        `;
+        container.appendChild(formationElement);
+    });
+    
+    // Réinitialiser les ads après chargement
+    initializeGoogleAds();
+}
+
+function loadBlogArticles(filter = 'all') {
+    const container = document.getElementById('blogGrid');
+    container.innerHTML = '';
+    
+    const filteredArticles = filter === 'all' 
+        ? blogArticles 
+        : blogArticles.filter(article => article.source === filter);
+    
+    filteredArticles.forEach(article => {
+        const articleElement = document.createElement('article');
+        articleElement.className = 'blog-card';
+        articleElement.innerHTML = `
+            <img src="${article.image}" alt="${article.title}">
+            <div class="blog-content">
+                <span class="blog-source">${article.source.toUpperCase()}</span>
+                <h4>${article.title}</h4>
+                <p>${article.excerpt}</p>
+                <div class="blog-meta">
+                    <span>${formatDate(article.date)}</span>
+                    <span>${article.readTime} de lecture</span>
+                </div>
+                <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;" onclick="openArticle('${article.url}')">
+                    Lire l'article
+                </button>
+            </div>
+        `;
+        container.appendChild(articleElement);
+    });
+    
+    // Réinitialiser les ads après chargement
+    initializeGoogleAds();
+}
 
 // Fermer les modals en cliquant à l'extérieur
 window.onclick = function(event) {
