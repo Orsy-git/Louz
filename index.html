@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louz - Vos Formations Certifiantes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2> Louz</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#comparatif">Comparatif</a></li>
+                <li><a href="#top-formations">Top 10</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="openLoginModal()">Connexion</button>
+                <button class="btn btn-primary" onclick="openRegisterModal()">S'inscrire</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Trouvez Votre <span class="highlight">Formation Idéale</span></h1>
+            <p class="hero-subtitle">Des centaines de formations certifiantes comparées et actualisées quotidiennement</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher une formation, un domaine..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Formations</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Plateformes</p>
+                </div>
+                <div class="stat">
+                    <h3>10k+</h3>
+                    <p>Étudiants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domaines de Formation -->
+    <section class="domaines">
+        <div class="container">
+            <h2 class="section-title">Domaines de Formation</h2>
+            <div class="domaines-grid">
+                <div class="domaine-card" data-domaine="ia" onclick="navigateToFormations('ia')">
+                    <i class="fas fa-brain"></i>
+                    <h3>Intelligence Artificielle</h3>
+                    <p>45 formations</p>
+                </div>
+                <div class="domaine-card" data-domaine="web" onclick="navigateToFormations('web')">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Développement Web</h3>
+                    <p>68 formations</p>
+                </div>
+                <div class="domaine-card" data-domaine="data" onclick="navigateToFormations('data')">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Science</h3>
+                    <p>32 formations</p>
+                </div>
+                <div class="domaine-card" data-domaine="marketing" onclick="navigateToFormations('marketing')">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Marketing Digital</h3>
+                    <p>54 formations</p>
+                </div>
+                <div class="domaine-card" data-domaine="design" onclick="navigateToFormations('design')">
+                    <i class="fas fa-palette"></i>
+                    <h3>Design UX/UI</h3>
+                    <p>29 formations</p>
+                </div>
+                <div class="domaine-card" data-domaine="cyber" onclick="navigateToFormations('cyber')">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersécurité</h3>
+                    <p>38 formations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 10 Formations IA -->
+    <section id="top-formations" class="top-formations">
+        <div class="container">
+            <h2 class="section-title">🏆 Top 10 des Formations en IA</h2>
+            <div class="formations-list" id="formationsList">
+                <!-- Les formations seront chargées par JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparatif Plateformes -->
+    <section id="comparatif" class="comparatif">
+        <div class="container">
+            <h2 class="section-title">📊 Comparatif des Plateformes</h2>
+            <div class="comparatif-grid">
+                <div class="platform-card">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/11/Coursera-Logo.png" alt="Coursera" style="height: 40px; object-fit: contain;">
+                    <h3>Coursera</h3>
+                    <div class="rating">
+                        ★★★★☆ <span>4.2/5</span>
+                    </div>
+                    <p>Formations universitaires et professionnelles</p>
+                    <div class="platform-features">
+                        <span><i class="fas fa-check"></i> Certifications</span>
+                        <span><i class="fas fa-check"></i> Universités</span>
+                        <span><i class="fas fa-times"></i> Gratuit limité</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openPlatform('coursera')">Voir les formations</button>
+                </div>
+                
+                <div class="platform-card">
+                    <img src="https://download.logo.wine/logo/Udemy/Udemy-Logo.wine.png" alt="Udemy" style="height: 40px; object-fit: contain;">
+                    <h3>Udemy</h3>
+                    <div class="rating">
+                        ★★★★☆ <span>4.3/5</span>
+                    </div>
+                    <p>Large choix de cours variés</p>
+                    <div class="platform-features">
+                        <span><i class="fas fa-check"></i> Prix bas</span>
+                        <span><i class="fas fa-check"></i> Variété</span>
+                        <span><i class="fas fa-times"></i> Qualité variable</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openPlatform('udemy')">Voir les formations</button>
+                </div>
+                
+                <div class="platform-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/OpenClassrooms_logo.png" alt="OpenClassrooms" style="height: 40px; object-fit: contain;">
+                    <h3>OpenClassrooms</h3>
+                    <div class="rating">
+                        ★★★★☆ <span>4.1/5</span>
+                    </div>
+                    <p>Formations diplômantes avec mentor</p>
+                    <div class="platform-features">
+                        <span><i class="fas fa-check"></i> Mentorat</span>
+                        <span><i class="fas fa-check"></i> Diplômes</span>
+                        <span><i class="fas fa-times"></i> Prix élevé</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openPlatform('openclassrooms')">Voir les formations</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Dynamique -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">📝 Actualités du E-learning</h2>
+            <div class="blog-filters">
+                <button class="filter-btn active" data-source="all">Toutes les sources</button>
+                <button class="filter-btn" data-source="coursera">Coursera</button>
+                <button class="filter-btn" data-source="udemy">Udemy</button>
+                <button class="filter-btn" data-source="edtech">OpenClassrooms</button>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Les articles de blog seront chargés dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🚀 Louz</h3>
+                    <p>Votre guide vers la formation certifiante idéale.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#comparatif">Comparatif</a></li>
+                        <li><a href="#top-formations">Top 10</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#" onclick="openLegal('mentions')">Mentions légales</a></li>
+                        <li><a href="#" onclick="openLegal('confidentialite')">Confidentialité</a></li>
+                        <li><a href="#" onclick="openLegal('affiliation')">Affiliation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Votre email" class="newsletter-input" id="newsletterEmail">
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()">S'abonner</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Louz. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Connexion</h2>
+            <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+            <p class="auth-switch">
+                Pas de compte ? <a href="#" onclick="switchToRegister()">S'inscrire</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegisterModal()">&times;</span>
+            <h2>Inscription</h2>
+            <form class="auth-form">
+                <input type="text" placeholder="Nom complet" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <input type="password" placeholder="Confirmer le mot de passe" required>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </form>
+            <p class="auth-switch">
+                Déjà un compte ? <a href="#" onclick="switchToLogin()">Se connecter</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
